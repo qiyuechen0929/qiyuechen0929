@@ -2,7 +2,7 @@
 """📡 主页引擎：拉取实时 GitHub 数据，重绘全部数据卡并重建 README。
 在 GitHub Actions 中由 GITHUB_TOKEN 驱动；本地运行需 export GITHUB_TOKEN=xxx
 """
-import json, os, urllib.request, datetime, random
+import json, os, urllib.request, urllib.parse, datetime, random
 
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 LOGIN = "qiyuechen0929"
@@ -110,7 +110,45 @@ def typing_url(lines):
             "&pause=1100&color=8B5CF6&center=true&vCenter=true&random=false&width=720&lines=")
     return base + ";".join(q(l) for l in lines)
 
-TEMPLATE = """<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient:0x4f46e5,0x9333ea,0xec4899&height=210&section=header&text=ChenQiyue%20%E9%99%88%E5%90%AF%E7%B2%A4&fontSize=40&fontAlignY=32&desc=%E5%AD%A6%E7%94%9F%E5%BC%80%E5%8F%91%E8%80%85%20%C2%B7%20AI%20%E5%B7%A5%E5%85%B7%E6%8E%A2%E7%B4%A2%E8%80%85&descAlignY=55&descSize=17&animation=fadeIn" width="100%"/>
+FORTUNES = ["宜 push，忌 force push。", "今天的 bug，是明天面试的素材。",
+            "node_modules 删了又装，人生也是如此。", "适合在深夜重构代码，后果自负。",
+            "你的 PR 会被 approve，但请先写测试。", "小心：node_modules 会越删越多。",
+            "今日不宜 merge，宜摸鱼整理仓库。", "灵感余额 99%，请放心挥霍。",
+            "咖啡与代码，缺一不可。", "git blame 之前，先学会原谅自己。",
+            "显卡一响，黄金万两。", "改一行，修一天，也是修行。"]
+
+def status_card():
+    bars = [("🤖 AI 依赖度", 87, "#8b5cf6"), ("🏛 古迹工程进度", 100, "#f59e0b"),
+            ("☕ 咖啡库存", 34, "#f97316"), ("💡 灵感余量", 99, "#22d3ee")]
+    s = svg_open(520, 210) + dot_title(24, "🎛 实时状态", "#f97316")
+    y = 64
+    for label, val, color in bars:
+        s += (f'  <text x="24" y="{y+12}" font-family="Segoe UI,sans-serif" font-size="12" fill="#e6edf3">{label}</text>\n'
+              f'  <text x="496" y="{y+12}" text-anchor="end" font-family="Segoe UI,sans-serif" font-size="12" font-weight="700" fill="{color}">{val}%</text>\n'
+              f'  <rect x="24" y="{y+18}" width="472" height="12" rx="6" fill="#21262d"/>\n'
+              f'  <rect x="24" y="{y+18}" width="{472*val/100:.0f}" height="12" rx="6" fill="{color}"/>\n')
+        if val < 100:
+            s += (f'  <rect x="24" y="{y+18}" width="26" height="12" rx="6" fill="#ffffff" opacity="0.22">\n'
+                  f'    <animateTransform attributeName="transform" type="translate" values="0,0;{472*val/100-26:.0f},0" dur="2.4s" repeatCount="indefinite"/>\n'
+                  f'  </rect>\n')
+        y += 36
+    s += '  <text x="260" y="202" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#8b949e">以上数据由 AI 严肃编造，请勿当真</text>\n'
+    return s + "</svg>\n"
+
+def fortune_card():
+    today = datetime.date.today()
+    rng = random.Random(today.toordinal())
+    star_n = rng.choice([3, 4, 4, 5])
+    star_str = "★" * star_n + "☆" * (5 - star_n)
+    text = rng.choice(FORTUNES)
+    s = svg_open(420, 190) + dot_title(24, f"🔮 今日签 · {today.strftime('%m月%d日')}", "#c026d3")
+    s += f'  <text x="210" y="92" text-anchor="middle" font-size="26" fill="#fbbf24">{star_str}</text>\n'
+    s += f'  <text x="210" y="132" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="15" fill="#e6edf3">{text}</text>\n'
+    s += f'  <text x="210" y="172" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#8b949e">签文由 AI 大数据（认真编的）生成 · 每日 0 点刷新</text>\n'
+    return s + "</svg>\n"
+
+TEMPLATE = """<!-- 🎉 彩蛋：翻到源码的人最可爱 · 这只端着咖啡的猫送给你：/\\_/\\  ( =^･ω･^= )  -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient:0x4f46e5,0x9333ea,0xec4899&height=210&section=header&text=ChenQiyue&fontSize=40&fontAlignY=32&desc=%E5%AD%A6%E7%94%9F%E5%BC%80%E5%8F%91%E8%80%85%20%C2%B7%20AI%20%E5%B7%A5%E5%85%B7%E6%8E%A2%E7%B4%A2%E8%80%85&descAlignY=55&descSize=17&animation=fadeIn" width="100%"/>
 
 <div align="center">
   <a href="https://git.io/typing-svg"><img src="@@TYPING@@" alt="Typing SVG"/></a>
@@ -133,6 +171,18 @@ TEMPLATE = """<img src="https://capsule-render.vercel.app/api?type=waving&color=
 
 <div align="center">
   <img src="assets/ai-eye.svg" width="520" alt="AI 正在看你"/>
+</div>
+
+## 🎛 实时状态
+
+<div align="center">
+  <img src="assets/status-card.svg" width="520" alt="实时状态"/>
+</div>
+
+## 🔮 今日签
+
+<div align="center">
+  <img src="assets/fortune-card.svg" width="420" alt="今日签"/>
 </div>
 
 ## 📡 最近动态
@@ -232,8 +282,10 @@ def main():
     if latest:
         open("assets/latest-card.svg", "w", encoding="utf-8").write(
             latest_card(latest["name"], "", hours, contrib, cur))
+    open("assets/status-card.svg", "w", encoding="utf-8").write(status_card())
+    open("assets/fortune-card.svg", "w", encoding="utf-8").write(fortune_card())
 
-    lines = ["你好，我是陈启粤 👋",
+    lines = ["你好，我是 ChenQiyue 👋",
              f"学生开发者 · 仓库 {repos['totalCount']} · Star {stars}",
              "给 AI 装上\"眼睛\" · 让工具说中文",
              f"年度贡献 {contrib} 次 · 正在盖天坛 🏛️",
