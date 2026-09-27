@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="150" viewBox="0 0 860 150">
+  <rect width="860" height="150" rx="14" fill="#0d1117" stroke="#30363d"/>
+  <rect x="25" y="16" width="160" height="118" rx="12" fill="#161b22" stroke="#30363d"/>
+  <text x="105" y="52" text-anchor="middle" font-size="32">🚀</text>
+  <text x="105" y="88" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="24" font-weight="700" fill="#e6edf3">19</text>
+  <text x="105" y="114" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="13" fill="#8b949e">公开仓库</text>
+  <rect x="194" y="16" width="160" height="118" rx="12" fill="#161b22" stroke="#30363d"/>
+  <text x="274" y="52" text-anchor="middle" font-size="32">⭐</text>
+  <text x="274" y="88" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="24" font-weight="700" fill="#e6edf3">15</text>
+  <text x="274" y="114" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="13" fill="#8b949e">收获 Star</text>
+  <rect x="363" y="16" width="160" height="118" rx="12" fill="#161b22" stroke="#30363d"/>
+  <text x="443" y="52" text-anchor="middle" font-size="32">👁</text>
+  <text x="443" y="88" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="24" font-weight="700" fill="#e6edf3">7</text>
+  <text x="443" y="114" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="13" fill="#8b949e">旗舰项目星数</text>
+  <rect x="532" y="16" width="160" height="118" rx="12" fill="#161b22" stroke="#30363d"/>
+  <text x="612" y="52" text-anchor="middle" font-size="32">🏛</text>
+  <text x="612" y="88" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="24" font-weight="700" fill="#e6edf3">2</text>
+  <text x="612" y="114" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="13" fill="#8b949e">复刻中国古迹</text>
+  <rect x="701" y="16" width="160" height="118" rx="12" fill="#161b22" stroke="#30363d"/>
+  <text x="781" y="52" text-anchor="middle" font-size="32">🌈</text>
+  <text x="781" y="88" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="24" font-weight="700" fill="#e6edf3">11</text>
+  <text x="781" y="114" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="13" fill="#8b949e">编程语言</text>
+</svg>

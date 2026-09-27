@@ -31,18 +31,16 @@
 ## 📊 GitHub 数据
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=qiyuechen0929&show_icons=true&theme=radical&hide_border=true&count_private=true"/>
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=qiyuechen0929&layout=compact&theme=radical&hide_border=true&langs_count=8"/>
+  <img src="assets/stats-card.svg" width="49%" alt="GitHub 战报"/>
+  <img src="assets/langs-card.svg" width="49%" alt="语言占比"/>
 </div>
 
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=qiyuechen0929&theme=radical&hide_border=true&locale=cn"/>
-</div>
 
-## 🏆 奖杯墙
+
+## 🏆 成就墙（数据实时取自本账号）
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=qiyuechen0929&theme=radical&no-frame=true&no-bg=true&column=7&margin-w=8"/>
+  <img src="assets/achievements.svg" width="92%" alt="成就墙"/>
 </div>
 
 ## 🐍 贡献贪吃蛇
