@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420" height="190" viewBox="0 0 420 190">
   <rect width="420" height="190" rx="14" fill="#0d1117" stroke="#30363d"/>
   <circle cx="28" cy="36" r="4" fill="#c026d3"/>
-  <text x="42" y="41" font-family="Segoe UI,sans-serif" font-size="17" font-weight="700" fill="#c9d1d9">🔮 今日签 · 10月04日</text>
+  <text x="42" y="41" font-family="Segoe UI,sans-serif" font-size="17" font-weight="700" fill="#c9d1d9">🔮 今日签 · 10月05日</text>
   <text x="210" y="92" text-anchor="middle" font-size="26" fill="#fbbf24">★★★☆☆</text>
-  <text x="210" y="132" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="15" fill="#e6edf3">小心：node_modules 会越删越多。</text>
+  <text x="210" y="132" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="15" fill="#e6edf3">今日不宜 merge，宜摸鱼整理仓库。</text>
   <text x="210" y="172" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="11" fill="#8b949e">签文由 AI 大数据（认真编的）生成 · 每日 0 点刷新</text>
 </svg>
