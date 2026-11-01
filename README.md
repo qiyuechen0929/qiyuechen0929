@@ -12,7 +12,7 @@
 
 ## 你好，我是陈启粤 👋
 
-- 🎓 **学生开发者** —— 仓库是我这两个月的成长记录：**23 个公开仓库 · 19 颗星**
+- 🎓 **学生开发者** —— 仓库是我这两个月的成长记录：**22 个公开仓库 · 19 颗星**
 - 👀 **代表作**：<a href="https://github.com/qiyuechen0929/vision-bridge">Vision Bridge</a>（7★）—— 给纯文本 AI 装一双眼睛，让 DeepSeek 们也能看懂你贴的截图
 - 🏛 **最近沉迷**：让 AI 在 Blender 里一行行"盖"中国古迹 —— <a href="https://github.com/qiyuechen0929/blender-heritage-scenes">天坛 & 佛山祖庙</a>已封顶
 - 🈶 **顺手做的事**：把 Cursor、Claude Desktop 都汉化了 —— 哪里有英文界面，哪里就有我
@@ -73,7 +73,7 @@
   <img src="assets/achievements.svg" width="94%" alt="成就墙"/>
 </div>
 
-<div align="center"><sub>🔥 当前连续 0 天 · 最长 5 天 · 本年贡献 217 次 · 关注者 4</sub></div>
+<div align="center"><sub>🔥 当前连续 1 天 · 最长 5 天 · 本年贡献 218 次 · 关注者 4</sub></div>
 
 ## 🐍 贡献贪吃蛇
 
