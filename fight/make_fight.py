@@ -9,28 +9,32 @@ make_fight.py · 生成 fight-light.svg / fight-dark.svg （31 秒一轮）
 于是单个词可以被踢开、被劈成两半、被当蹦床踩，而版面在每个操作系统上
 都完全一致。
 
-改编自 bulletchicken/bulletchicken 的 fight/（原作者没有给许可证，
-这里保留署名；如果原作者有意见请开 issue，我会换掉）。
-原版是一个叫 Jeremy 的人在文字里跟另一个火柴人打了一架，这里换成了
-陈启粤的自我介绍，并把原来那只泰迪熊改成了「Pupil.」里蹦出来的眼球。
-
 被点名的词：called（被踢散）、Pupil.（裂缝、洞、和从里面蹦出来的眼球）
-bridge, / Chinese. / README,（被劈成两半）。
+bridge / Chinese. / README,（被劈成两半）。
+
+彩蛋
+  开场有一只鼠标指针点了一下 "Pupil." —— 页面是被"点"裂的。
+  Red 拔出来的刀是一根巨大的文本光标（I-beam）。
+  每个词被劈开的瞬间，下面会浮出一条红色波浪线和 SyntaxError。
+  Ink 的领域展开是一条终端命令：$ rm -rf ./*
+  然后虚空里再敲一次 $ git restore . ，页面就自愈了。
 
 动画工具箱
   预备动作、挤压拉伸、每个 tween 都带缓动、6 帧跑步循环、命中停顿、
   冲击帧、拖影、残影、屏幕震动与滚动、跟随动作、待机呼吸
 
 分镜表（秒）
+ 0.7  鼠标指针滑进来，点了一下 "Pupil."。
  0.9  裂纹从 "Pupil." 三个波次炸开。页面发抖、跳一下。
  1.7  碎裂。冲击环、分叉、十二片玻璃碴。洞开了。
  1.9  Red 从洞里爬出来。落地。拍拍灰。叉腰。
  3.9  Red 飞踢 "called"，字母散开。
  4.5  Ink 从天而降。超级英雄落地。指。
- 4.8  Red 一惊，拔刀。Shing。
+ 4.8  Red 一惊，拔刀（一根巨大的文本光标）。Shing。
  5.3  Ink 捏响指关节，瞬移到背后。戳两下。"？" "！"
  6.7  Red 挥砍。Ink 后仰，黑客帝国式躲开。
- 7.1  追着往上砍。Red 一刀劈开 "bridge," "Chinese." 和 "README,"。
+ 7.1  追着往上砍。Red 一刀劈开 "bridge"、"Chinese." 和 "README,"，
+      每一刀都弹出 SyntaxError。
  8.6  Ink 落下，Red 俯冲，刀插进地板。拔不动。Ink 一脚踢飞。
 10.5  Ink 吹口哨。躺在地上的 "Pupil." 抖了一下，噗，一只眼球。
       它咬住 Red 的腿，被踢飞，噗地消失。
@@ -41,12 +45,10 @@ bridge, / Chinese. / README,（被劈成两半）。
 19.6  超级一拳。Ink 飞进左墙。
 21.0  Red 往墙里塞了六个像素方块躲进去。Ink 敲门。墙倒，把他埋了。
       土堆在抖。Red 拿镐子挖出来。
-24.0  Ink 走到中央。结印。"领域展开 · 无量空处。"
-25.4  虚空吞掉整页。Red 飘向星空。README 在虚空里自愈。
-28.1  虚空收进 Ink 掌心，把他一起带走。干净的一页。
+24.0  Ink 走到中央。结印。"$ rm -rf ./*"。
+25.4  虚空吞掉整页。Red 飘向星空。虚空里敲下 "$ git restore ."。
+28.1  虚空收进 Ink 掌心，把他一起带走。干净、完好的一页。
 30.0  循环。
-
-改编自 https://github.com/bulletchicken/bulletchicken （作者：Jeremy / @bulletchicken）
 """
 import math
 import os
@@ -82,6 +84,7 @@ FONT = ImageFont.truetype(_font(SANS), 16)
 FONT_B = ImageFont.truetype(_font(SANS_B), 16)
 
 FONT_STACK = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif"
+MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace"
 
 H1_TEXT = "Hi, I'm ChenQiyue 👋"
 PARAS = [
@@ -94,11 +97,13 @@ PALETTES = {
     "light": dict(bg="#ffffff", fg="#1f2328", rule="#d1d9e0", red="#cf222e", spark="#e3b341",
                   blade="#d6dbe0", blade_edge="#6b7580", hamon="#ffffff", tsuba="#8a6d2f", wrap="#2b2b2b",
                   pink="#d6409f", void_fg="#f0f0ff", smoke="#8c959f", flash="#ffffff", crack="#9ea5ad",
-                  laser="#6e5cf5", scorch="#4b4f55", wood="#7a5230", wind="#22a9bd", wind_hi="#7fe3f0"),
+                  laser="#6e5cf5", scorch="#4b4f55", wood="#7a5230", wind="#22a9bd", wind_hi="#7fe3f0",
+                  green="#1a7f37"),
     "dark":  dict(bg="#0d1117", fg="#e6edf3", rule="#3d444d", red="#f85149", spark="#e3b341",
                   blade="#dfe5ec", blade_edge="#6b7580", hamon="#ffffff", tsuba="#c9a24a", wrap="#2b2b2b",
                   pink="#f778ba", void_fg="#f0f0ff", smoke="#8b949e", flash="#f0f0ff", crack="#8b949e",
-                  laser="#9d8dff", scorch="#aeb6bf", wood="#9a6b3f", wind="#5fd8e8", wind_hi="#ffffff"),
+                  laser="#9d8dff", scorch="#aeb6bf", wood="#9a6b3f", wind="#5fd8e8", wind_hi="#ffffff",
+                  green="#3fb950"),
 }
 VOID_RIM = "#8f7cff"
 BLOCK_GREEN = ["#5d9b3c", "#6fb04a", "#4e8a32"]
@@ -406,24 +411,18 @@ def frame_uv(P):
 def katana_parts(P):
     """A curved single-edged blade, temper line, oval tsuba, wrapped handle, end cap."""
     rh, wt, (ux, uy), (px, py), L = frame_uv(P)
-    # the edge sits on the -perp side; the blade bows the other way, toward the spine
-    bx, by = rh[0] + ux * 2.6, rh[1] + uy * 2.6
-    lb = L - 2.6
-    bend = lb * 0.075
+    # 这不是刀，是一根放大的文本光标（I-beam）
+    bar, stem, cap = 4.6, 1.5, 2.0
 
-    def spine(s):
-        c = 4 * bend * s * (1 - s)
-        return bx + ux * lb * s + px * c, by + uy * lb * s + py * c
+    def at(u_, v_):
+        return (rh[0] + ux * u_ + px * v_, rh[1] + uy * u_ + py * v_)
 
-    def off(pt, side, w):
-        return pt[0] + px * side * w, pt[1] + py * side * w
-
-    back = [off(spine(s), 1, 1.25 - 0.3 * s) for s in (0, 0.3, 0.6, 0.86)]
-    edge = [off(spine(s), -1, 1.9 - 0.4 * s) for s in (0.86, 0.6, 0.3, 0)]
-    blade = back + [wt] + edge
-    hamon = [off(spine(s), -1, 0.55) for s in (0.06, 0.3, 0.6, 0.86)]
+    blade = [at(0, -bar), at(0, bar), at(cap, bar), at(cap, stem), at(L - cap, stem),
+             at(L - cap, bar), at(L, bar), at(L, -bar), at(L - cap, -bar),
+             at(L - cap, -stem), at(cap, -stem), at(cap, -bar)]
+    hamon = [at(L * 0.12, 0), at(L * 0.5, 0), at(L * 0.88, 0)]
     cx, cy = rh[0] + ux * 1.2, rh[1] + uy * 1.2
-    tsuba = [(cx + px * 3.4 * math.cos(a) + ux * 1.7 * math.sin(a), cy + py * 3.4 * math.cos(a) + uy * 1.7 * math.sin(a))
+    tsuba = [(cx + px * 2.2 * math.cos(a) + ux * 1.1 * math.sin(a), cy + py * 2.2 * math.cos(a) + uy * 1.1 * math.sin(a))
              for a in [i * math.pi / 4 for i in range(8)]]
     h0x, h0y = rh[0] - ux * 0.6, rh[1] - uy * 0.6
     h1x, h1y = rh[0] - ux * 10.5, rh[1] - uy * 10.5
@@ -442,8 +441,8 @@ KATANA_STYLE = [
     ("tsuka", "wrap", None, 0),
     ("d0", "red", None, 0), ("d1", "red", None, 0), ("d2", "red", None, 0),
     ("kashira", "tsuba", "fg", 0.5),
-    ("blade", "blade", "blade_edge", 0.7),
-    ("hamon", None, "hamon", 0.9),
+    ("blade", "fg", None, 0),
+    ("hamon", None, "bg", 0.9),
     ("tsuba", "tsuba", "fg", 0.6),
 ]
 
@@ -2481,12 +2480,17 @@ for wd in (S1, S2, S3):
 
 
 def bubble_svg(p):
-    bx, by, w, h = 20, -50, 136, 36
+    bx, by, w, h = 20, -50, 128, 36
     body = (f'<rect x="{bx}" y="{by}" width="{w}" height="{h}" rx="7" fill="{p["bg"]}" stroke="{p["fg"]}" stroke-width="1.4"/>'
             f'<polygon points="{bx + 10},{by + h - 1} {bx + 26},{by + h - 1} {bx - 4},{by + h + 12}" fill="{p["bg"]}" stroke="{p["fg"]}" stroke-width="1.4" stroke-linejoin="round"/>'
             f'<rect x="{bx + 11}" y="{by + h - 3}" width="14" height="4" fill="{p["bg"]}"/>')
-    text = (f'<text x="{bx + w / 2}" y="{by + 15}" text-anchor="middle" font-size="12.48" font-weight="700" fill="{p["fg"]}">Domain Expansion.</text>'
-            f'<text x="{bx + w / 2}" y="{by + 29}" text-anchor="middle" font-size="12.48" font-weight="700" fill="{VOID_RIM}">Infinite Void.</text>')
+    caret = blink(26.0, 26.4, period=0.3)
+    text = (f'<text x="{bx + 11}" y="{by + 15}" font-family="{MONO}" font-size="11.4" font-weight="600" '
+            f'fill="{p["fg"]}">$ rm -rf ./*</text>'
+            f'<rect x="{bx + 11 + 78}" y="{by + 5}" width="6.4" height="11" fill="{p["fg"]}" opacity="0">'
+            + animate("opacity", caret, str) + '</rect>'
+            f'<text x="{bx + 11}" y="{by + 29}" font-family="{MONO}" font-size="11.4" '
+            f'fill="{VOID_RIM}">5 files gone</text>')
     return (f'<g transform="translate({n(HEAD_X)},{n(HEAD_Y)})"><g opacity="0">' + animate("opacity", BUBBLE_OP, str)
             + animate_tf("scale", BUBBLE_SC, f_ss) + body + text + "</g></g>")
 
@@ -2540,6 +2544,117 @@ def void_svg(p):
 def glow_svg(p):
     return (f'<g transform="translate({n(SIGN_X)},{n(SIGN_Y)})"><circle r="6" fill="{VOID_RIM}" opacity="0">'
             + animate("opacity", GLOW, str) + "</circle></g>")
+
+
+# ================================================================ 彩蛋层：鼠标 / 报错 / 终端
+def blink(t0, t1, period=0.42, lo=0.0, hi=1.0):
+    """一段规律的闪烁（光标那种）。"""
+    tr = Track(hi)
+    tr.hold(t0)
+    t, i = t0, 0
+    while t < t1:
+        tr.add(t, lo if i % 2 == 0 else hi, "lin")
+        t += period / 2
+        i += 1
+    tr.add(t1, lo, "lin")
+    return tr
+
+
+def mouse_click_svg():
+    """开场那只鼠标：滑进来，点一下 "Pupil." —— 这一页是被"点"裂的。"""
+    ARROW = "M0 0 L0 18 L4.9 13.3 L8.3 20 L11.7 18.4 L8.3 11.8 L13.4 11.4 Z"
+
+    def svg(p):
+        pos = Track((W - 26.0, 46.0))
+        pos.set(0.0, (W - 26.0, 46.0))
+        pos.add(0.66, (RD.cx + 11, RD.cy + 5), "out")
+        pos.hold(1.24)
+        pos.add(2.02, (RD.cx + 104, RD.cy + 122), "inout")
+        op = Track(1.0)
+        op.hold(1.76)
+        op.add(2.02, 0.0, "in")
+        press = Track((0.0, 0.0))
+        press.hold(0.66)
+        press.add(0.71, (2.2, 2.2), "out")
+        press.add(0.82, (0.0, 0.0), "in")
+        rr = Track(0.0)
+        rr.set(0.70, 0.0)
+        rr.add(1.16, 30.0, "out")
+        ro = Track(0.0)
+        ro.set(0.70, 0.0)
+        ro.add(0.75, 0.8, "out")
+        ro.add(1.16, 0.0, "in")
+        out = ['<g opacity="1">', animate("opacity", op, str)]
+        out.append(f'<g>{animate_tf("translate", pos, f_xy)}'
+                   f'<circle cx="0" cy="0" r="0" fill="none" stroke="{p["red"]}" stroke-width="1.6" opacity="0">'
+                   + animate("opacity", ro, str) + animate("r", rr, n) + '</circle>'
+                   f'<g>{animate_tf("translate", press, f_xy)}'
+                   f'<path d="{ARROW}" fill="{p["fg"]}" stroke="{p["bg"]}" stroke-width="1.2" stroke-linejoin="round"/>'
+                   f'</g></g>')
+        out.append("</g>")
+        return "".join(out)
+    return svg
+
+
+def syntax_svg(wd, t, msg="SyntaxError: unexpected token"):
+    """词被劈开的瞬间，下面浮出一条红色波浪线 —— IDE 报错那种。"""
+
+    def svg(p):
+        y = wd.y + 7.5
+        pts, k, x = [], 0, wd.x
+        while x < wd.x + wd.w:
+            pts.append((x, y + (1.7 if k % 2 else -1.0)))
+            x += 3.4
+            k += 1
+        d = "M" + " L".join(f"{n(a)},{n(b)}" for a, b in pts)
+        op = Track(0.0)
+        op.set(t, 0.0)
+        op.add(t + 0.09, 1.0, "out")
+        op.hold(t + 0.95)
+        op.add(t + 1.32, 0.0, "in")
+        return ('<g opacity="0">' + animate("opacity", op, str)
+                + f'<path d="{d}" fill="none" stroke="{p["red"]}" stroke-width="1.5" stroke-linejoin="round"/>'
+                + f'<text x="{n(wd.x)}" y="{n(y + 15)}" font-family="{MONO}" font-size="8.6" '
+                  f'letter-spacing="0.2" fill="{p["red"]}">{html.escape(msg)}</text>'
+                + "</g>")
+    return svg
+
+
+def git_restore_svg():
+    """虚空里弹出一个小终端，敲下 $ git restore . —— 页面就是这么长回来的。"""
+
+    def svg(p):
+        w, h = 208, 52
+        x, y = (W - w) / 2, H - h - 22
+        op = Track(0.0)
+        op.set(27.10, 0.0)
+        op.add(27.36, 1.0, "out")
+        op.hold(28.86)
+        op.add(29.08, 0.0, "in")
+        cur = blink(27.36, 28.9)
+        g = p["green"]
+        return ('<g opacity="0">' + animate("opacity", op, str)
+                + f'<rect x="{n(x)}" y="{n(y)}" width="{w}" height="{h}" rx="7" fill="#0b0d14" '
+                  f'stroke="{g}" stroke-width="1" stroke-opacity="0.45"/>'
+                + "".join(f'<circle cx="{n(x + 12 + i * 9)}" cy="{n(y + 11)}" r="2.6" fill="{g}" opacity="0.45"/>'
+                          for i in range(3))
+                + f'<line x1="{n(x)}" y1="{n(y + 19)}" x2="{n(x + w)}" y2="{n(y + 19)}" '
+                  f'stroke="{g}" stroke-width="1" stroke-opacity="0.25"/>'
+                + f'<text x="{n(x + 12)}" y="{n(y + 35)}" font-family="{MONO}" font-size="11.5" '
+                  f'fill="{g}">$ git restore .</text>'
+                + f'<rect x="{n(x + 12 + 100)}" y="{n(y + 26)}" width="6.2" height="11" fill="{g}" opacity="0">'
+                + animate("opacity", cur, str) + "</rect>"
+                + f'<text x="{n(x + 12)}" y="{n(y + 47)}" font-family="{MONO}" font-size="8.6" '
+                  f'fill="{g}" opacity="0.55">restored 5 files · 0 conflicts</text>'
+                + "</g>")
+    return svg
+
+
+layer("over_red", bubble_svg)      # 原本定义了却没被调用过，这里把它接上
+layer("top", mouse_click_svg())
+for _wd, _t in ((S1, 8.90), (S2, 9.52), (S3, 10.28)):
+    layer("marks", syntax_svg(_wd, _t))
+layer("top", git_restore_svg())
 
 
 def render(theme):
