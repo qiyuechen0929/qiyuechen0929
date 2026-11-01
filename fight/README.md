@@ -76,3 +76,7 @@ Linux 的 Liberation / Windows 的 Segoe UI / macOS 的 Helvetica。换字体只
 ```
 
 `--virtual-time-budget` 那个截图法时间会飘，`setCurrentTime` 才是确定的那一帧。
+
+## 许可
+
+MIT，见仓库根目录的 [LICENSE](../LICENSE)。随便拿去改、拿去用，改成你自己的名字再做一版也行。
