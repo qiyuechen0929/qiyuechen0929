@@ -1,63 +1,52 @@
-<!-- 🎉 彩蛋：翻到源码的人最可爱 · 这只端着咖啡的猫送给你：/\_/\  ( =^･ω･^= )  -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient:0x4f46e5,0x9333ea,0xec4899&height=210&section=header&text=ChenQiyue&fontSize=40&fontAlignY=32&desc=%E5%AD%A6%E7%94%9F%E5%BC%80%E5%8F%91%E8%80%85%20%C2%B7%20AI%20%E5%B7%A5%E5%85%B7%E6%8E%A2%E7%B4%A2%E8%80%85&descAlignY=55&descSize=17&animation=fadeIn" width="100%"/>
+<!-- 🎉 又来看源码了？这只猫蹲在角落等你很久了： /\_/\  ( =^･ω･^= )
+     开场那张会动的图在 hero/make_hero.py，改台词只要改里面的 EN_LINE / ZH_LINE。 -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="hero/hero-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="hero/hero-light.svg">
+  <img src="hero/hero-light.svg" width="100%" alt="一张会动的主页：hi，我是陈启粤。文字逐字打出，右边睁开一只巨大的眼睛扫描全文，一行英文 I can't see images. 被逐字翻译成中文，一条 Bug 虫爬进来把「看见」两个字啃走，光标变成的小人挥刀把虫子劈成两半，被啃走的字又飞回原位，最后打出「人和 AI 一起做东西，最好玩。」">
+</picture>
+
+<div align="center"><sub>↑ 这不是视频，是一张 SVG：没有 JavaScript、没有一张位图、没有一个外部请求。<br/>每一帧都由 <a href="hero/make_hero.py">hero/make_hero.py</a> 用 <code>keyTimes</code> + <code>keySplines</code> 算出来 · 24 秒一轮</sub></div>
+
+<br/>
+
+## 你好，我是陈启粤 👋
+
+- 🎓 **学生开发者** —— 仓库是我这两个月的成长记录：**23 个公开仓库 · 19 颗星**
+- 👀 **代表作**：<a href="https://github.com/qiyuechen0929/vision-bridge">Vision Bridge</a>（7★）—— 给纯文本 AI 装一双眼睛，让 DeepSeek 们也能看懂你贴的截图
+- 🏛 **最近沉迷**：让 AI 在 Blender 里一行行"盖"中国古迹 —— <a href="https://github.com/qiyuechen0929/blender-heritage-scenes">天坛 & 佛山祖庙</a>已封顶
+- 🈶 **顺手做的事**：把 Cursor、Claude Desktop 都汉化了 —— 哪里有英文界面，哪里就有我
+- ⚡ **相信一件事**：人和 AI 一起做东西，最好玩
 
 <div align="center">
-  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1100&color=8B5CF6&center=true&vCenter=true&random=false&width=720&lines=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%98%AF%20ChenQiyue%20%F0%9F%91%8B;%E5%AD%A6%E7%94%9F%E5%BC%80%E5%8F%91%E8%80%85%20%C2%B7%20%E4%BB%93%E5%BA%93%2022%20%C2%B7%20Star%2018;%E7%BB%99%20AI%20%E8%A3%85%E4%B8%8A%22%E7%9C%BC%E7%9D%9B%22%20%C2%B7%20%E8%AE%A9%E5%B7%A5%E5%85%B7%E8%AF%B4%E4%B8%AD%E6%96%87;%E5%B9%B4%E5%BA%A6%E8%B4%A1%E7%8C%AE%20217%20%E6%AC%A1%20%C2%B7%20%E6%AD%A3%E5%9C%A8%E7%9B%96%E5%A4%A9%E5%9D%9B%20%F0%9F%8F%9B%EF%B8%8F;%E7%9B%B8%E4%BF%A1%E4%BA%BA%E5%92%8C%20AI%20%E4%B8%80%E8%B5%B7%E5%81%9A%E4%B8%9C%E8%A5%BF%EF%BC%8C%E6%9C%80%E5%A5%BD%E7%8E%A9" alt="Typing SVG"/></a>
+  <img src="assets/status-card.svg" width="46%" alt="实时状态"/>
+  <img src="assets/fortune-card.svg" width="46%" alt="今日签"/>
 </div>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=qiyuechen0929&color=8B5CF6&style=flat-square&label=访客"/>
-  <a href="https://github.com/qiyuechen0929?tab=followers"><img src="https://img.shields.io/github/followers/qiyuechen0929?style=flat-square&color=8B5CF6&label=关注者"/></a>
-  <img src="https://img.shields.io/badge/%F0%9F%8E%93-%E5%AD%A6%E7%94%9F%E5%BC%80%E5%8F%91%E8%80%85-8B5CF6?style=flat-square"/>
-  <img src="https://img.shields.io/badge/%F0%9F%93%A1-%E7%94%B1%E4%B8%BB%E9%A1%B5%E5%BC%95%E6%93%8E%E6%AF%8F6%E5%B0%8F%E6%97%B6%E9%A9%B1%E5%8A%A8-0969da?style=flat-square"/>
-</p>
-
-## 👀 关于我
-
-- 🎓 **学生开发者**——仓库是我这两个月的成长记录，现在有 **22 个公开仓库 · 18 颗星**
-- 👀 代表作：给纯文本 AI 装上"眼睛"的 **Vision Bridge**，让 DeepSeek 们也能看懂截图
-- 🏛 最近沉迷于让 AI 在 Blender 里**实时复刻中国古迹**：天坛和佛山祖庙都盖好了
-- 🈶 顺手把 Cursor、Claude Desktop 都汉化了——哪里有英文界面，哪里就有我
-- ⚡ 相信一件事：**人和 AI 一起做东西，最好玩**
-
 <div align="center">
-  <img src="assets/ai-eye.svg" width="520" alt="AI 正在看你"/>
-</div>
-
-## 🎛 实时状态
-
-<div align="center">
-  <img src="assets/status-card.svg" width="520" alt="实时状态"/>
-</div>
-
-## 🔮 今日签
-
-<div align="center">
-  <img src="assets/fortune-card.svg" width="420" alt="今日签"/>
-</div>
-
-## 📡 最近动态
-
-<div align="center">
-  <img src="assets/latest-card.svg" width="86%" alt="最近动态"/>
+  <img src="assets/latest-card.svg" width="94%" alt="最近动态"/>
 </div>
 
 ## 🎮 主页游乐场
 
-> 你是一名刚降落在 qiyuechen0929 主页的 AI 探险者。三条支线，各藏一个彩蛋，全部通关可解锁终极答案。
+> 你是一名刚降落在 `<qiyuechen0929>` 主页的 AI 探险者。三条支线，各藏一个彩蛋。
 
 ### 🏛️ 支线一 · 古迹工地
 
-亲眼看看 AI 怎么在 Blender 里，用一条条 bpy 代码把天坛和祖庙"长"出来——白天版 + 夜景版 + 相机巡游视频，全开源：
+亲眼看看 AI 怎么在 Blender 里，用一条条 `bpy` 代码把天坛和祖庙"长"出来——白天版 + 夜景版 + 相机巡游视频，全开源：
 
-👉 [blender-heritage-scenes](https://github.com/qiyuechen0929/blender-heritage-scenes)
+👉 <a href="https://github.com/qiyuechen0929/blender-heritage-scenes">blender-heritage-scenes</a>
 
-**🎁 彩蛋**：下面这幅天坛夜景是**会动的**——星星会闪、流星会划过、祈年殿的窗灯在忽明忽暗（刷新页面看流星）。
+<div align="center"><img src="assets/tiantan-scene.svg" width="520" alt="天坛夜景，会呼吸"/></div>
+
+**🎁 彩蛋**：上面那张会动的主页图里，被 Bug 啃走的两个字是「**看见**」——虫子在，AI 就瞎；虫子被劈了，它才看得见你屏幕上的东西。
 
 ### 👁️ 支线二 · AI 实验室
 
-上面那只一直在扫描你的眼睛，出生证明在这里：[Vision Bridge](https://github.com/qiyuechen0929/vision-bridge)（7★）。
-它还学会了多通道视觉降级方案：[Codex 视觉桥全攻略](https://github.com/qiyuechen0929/Common-solutions-to-fix-missing-vision-when-integrating-DeepSeek-into-Codex)。
+开场那只一直盯着你扫描的眼睛，出生证明在这里：<a href="https://github.com/qiyuechen0929/vision-bridge">Vision Bridge</a>（7★）。
+<div align="center"><img src="assets/ai-eye.svg" width="420" alt="AI 正在看你"/></div>
+
+它还学会了多通道视觉降级方案：<a href="https://github.com/qiyuechen0929/Common-solutions-to-fix-missing-vision-when-integrating-DeepSeek-into-Codex">Codex 视觉桥全攻略</a>。
 
 ### 🕹️ 支线三 · 街机机台
 
@@ -65,37 +54,37 @@
 
 | 机台 | 玩法 |
 |---|---|
-| [MagnetRush · 磁能狂飙](https://github.com/qiyuechen0929/MagnetRush) | 三技能 + 16 种装备 + AI 语音 |
-| [GestureRacer · 手势竞速](https://github.com/qiyuechen0929/GestureRacer) | 双手手势开车，拳头是油门 |
-| [GestureTree · 手势圣诞树](https://github.com/qiyuechen0929/GestureTree) | 手势切换四种照片展示模式 |
-| [GestureOrbit · 全向卡牌环](https://github.com/qiyuechen0929/GestureOrbit) | 手掌就是全向摇杆 |
-| [TriChessInn · 三棋小馆](https://github.com/qiyuechen0929/TriChessInn) | 象棋围棋五子棋，水墨风 AI 对弈 |
+| <a href="https://github.com/qiyuechen0929/MagnetRush">MagnetRush · 磁能狂飙</a> | 三技能 + 16 种装备 + AI 语音 |
+| <a href="https://github.com/qiyuechen0929/GestureRacer">GestureRacer · 手势竞速</a> | 双手手势开车，拳头是油门 |
+| <a href="https://github.com/qiyuechen0929/GestureTree">GestureTree · 手势圣诞树</a> | 手势切换四种照片展示模式 |
+| <a href="https://github.com/qiyuechen0929/GestureOrbit">GestureOrbit · 全向卡牌环</a> | 手掌就是全向摇杆 |
+| <a href="https://github.com/qiyuechen0929/TriChessInn">TriChessInn · 三棋小馆</a> | 象棋围棋五子棋，水墨风 AI 对弈 |
 
-<div align="center"><sub>通关终极答案：<b>人和 AI 一起做东西，最好玩。</b></sub></div>
+<div align="center"><sub>全部通关的终极答案：<b>人和 AI 一起做东西，最好玩。</b></sub></div>
 
-## 📊 GitHub 数据
-
-<div align="center">
-  <img src="assets/stats-card.svg" width="49%" alt="GitHub 战报"/>
-  <img src="assets/langs-card.svg" width="49%" alt="语言占比"/>
-</div>
-
-## 🏆 成就墙
+## 📊 这台机器的一些数字
 
 <div align="center">
-  <img src="assets/achievements.svg" width="92%" alt="成就墙"/>
+  <img src="assets/stats-card.svg" width="46%" alt="GitHub 战报"/>
+  <img src="assets/langs-card.svg" width="46%" alt="语言占比"/>
 </div>
+
+<div align="center">
+  <img src="assets/achievements.svg" width="94%" alt="成就墙"/>
+</div>
+
+<div align="center"><sub>🔥 当前连续 0 天 · 最长 5 天 · 本年贡献 217 次 · 关注者 4</sub></div>
 
 ## 🐍 贡献贪吃蛇
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" src="https://raw.githubusercontent.com/qiyuechen0929/qiyuechen0929/output/github-contribution-grid-snake-dark.svg"/>
-  <img src="https://raw.githubusercontent.com/qiyuechen0929/qiyuechen0929/output/github-contribution-grid-snake.svg" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qiyuechen0929/qiyuechen0929/output/github-contribution-grid-snake-dark.svg"/>
+  <img src="https://raw.githubusercontent.com/qiyuechen0929/qiyuechen0929/output/github-contribution-grid-snake.svg" width="100%" alt="贡献贪吃蛇"/>
 </picture>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient:0xec4899,0x9333ea,0x4f46e5&height=130&section=footer" width="100%"/>
+<br/>
 
 <div align="center">
   <b>人和 AI 一起做东西，最好玩。</b><br/>
-  <sub>由 📡 主页引擎每 6 小时自动驱动 · 用 ZCode(GLM) + Blender 5.0 建成</sub>
+  <sub>开场那张图由 <a href="hero/make_hero.py">hero/make_hero.py</a> 生成 · 下面的卡片由 <a href="engine/build_profile.py">engine/build_profile.py</a> 每 6 小时重算一次</sub>
 </div>
